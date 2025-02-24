@@ -87,8 +87,7 @@ func CalcHandler(w http.ResponseWriter, r *http.Request) {
 
 func (a *Application) StopServer() error {
 	http.HandleFunc("/", CalcHandler)
-	
-
+	return nil
 }
 
 func (a *Application) RunServer() error {

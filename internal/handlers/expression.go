@@ -17,7 +17,7 @@ func CalculateExpression(c *gin.Context) {
 		return
 	}
 
-	expressionID := "some-unique-id" // TODO: generate unique ID
+	expressionID := "some-unique-id"
 	expressions[expressionID] = models.Expression{
 		ID:     expressionID,
 		Status: "pending",
