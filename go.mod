@@ -41,3 +41,5 @@ require (
 replace github.com/ItzB1ack/CalculatorYL2/internal => ./internal
 
 replace github.com/ItzB1ack/CalculatorYL2/pkg => ./pkg
+
+replace github.com/ItzB1ack/CalculatorYL2/internal/models => ./internal/models

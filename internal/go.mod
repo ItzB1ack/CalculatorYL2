@@ -1,8 +1,8 @@
-module github.com/ItzB1ack/CalculatorYL2/internal
+module github.com/ItzB1ack/CalculatorYL2/cmd
 
 go 1.23.3
 
-require github.com/gin-gonic/gin v1.10.0
+require github.com/ItzB1ack/CalculatorYL2/internal v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/bytedance/sonic v1.11.6 // indirect
@@ -11,6 +11,7 @@ require (
 	github.com/cloudwego/iasm v0.2.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/gin-gonic/gin v1.10.0
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.20.0 // indirect
