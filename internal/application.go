@@ -62,7 +62,7 @@ func CalcHandler(w http.ResponseWriter, r *http.Request) {
 
 		if err != nil {
 			switch err {
-			case calc.ErrBrackets, calc.ErrValues, calc.ErrDivisionByZero, calc.ErrAllowed:
+			case calc.ErrorInBrackets, calc.ErrorInExpression, calc.ErrorDivisionByZero:
 				w.WriteHeader(http.StatusUnprocessableEntity)
 				responce := Response{Error: err.Error()}
 

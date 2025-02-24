@@ -1,10 +1,9 @@
-module github.com/ItzB1ack/CalculatorYL2/cmd
+module github.com/ItzB1ack/CalculatorYL2/internal
 
 go 1.23.3
 
-require github.com/ItzB1ack/CalculatorYL2/internal v0.0.0-00010101000000-000000000000
-
 require (
+	github.com/ItzB1ack/CalculatorYL2/pkg v0.0.0-20250224130152-20ff1c91bbb8
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect

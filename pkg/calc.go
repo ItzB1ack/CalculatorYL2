@@ -1,9 +1,9 @@
 package calc
 
 import (
+	"errors"
 	"strconv"
 	"unicode"
-	"errors"
 	//"fmt"
 )
 
