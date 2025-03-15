@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strings"
 
 	calc "github.com/ItzB1ack/CalculatorYL2/pkg"
 )
@@ -61,26 +62,26 @@ func CalcHandler(w http.ResponseWriter, r *http.Request) {
 		result, err := calc.Calc(request.Expression)
 
 		if err != nil {
-			switch err {
-			case calc.ErrorInBrackets, calc.ErrorInExpression, calc.ErrorDivisionByZero:
+			errMsg := err.Error()
+			if strings.Contains(errMsg, "brackets") || strings.Contains(errMsg, "expression") || strings.Contains(errMsg, "zero") {
 				w.WriteHeader(http.StatusUnprocessableEntity)
-				responce := Response{Error: err.Error()}
-
-				json.NewEncoder(w).Encode(responce)
-			default:
+				response := Response{Error: errMsg}
+				json.NewEncoder(w).Encode(response)
+			} else {
 				w.WriteHeader(http.StatusInternalServerError)
-				responce := Response{Error: "Внутренняя ошибка сервера"}
-
-				json.NewEncoder(w).Encode(responce)
+				response := Response{Error: "Внутренняя ошибка сервера"}
+				json.NewEncoder(w).Encode(response)
 			}
-
-		} else {
-			responce := Response{Result: result}
-			json.NewEncoder(w).Encode(responce)
+			return
 		}
+
+		w.WriteHeader(http.StatusOK)
+		response := Response{Result: result}
+		json.NewEncoder(w).Encode(response)
 	} else {
 		w.WriteHeader(http.StatusMethodNotAllowed)
-		fmt.Fprintf(w, `{"error": "Данный метод не поддерживается"}`)
+		response := Response{Error: "Данный метод не поддерживается"}
+		json.NewEncoder(w).Encode(response)
 	}
 
 }

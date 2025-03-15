@@ -5,4 +5,3 @@ const (
 	ErrorInBrackets   = "There is an error in the brackets"
 	DivideByZero      = "Division by zero"
 )
-
