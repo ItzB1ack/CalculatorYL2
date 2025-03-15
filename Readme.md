@@ -34,7 +34,7 @@
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/ItzB1ack/CalculatorYL2.git -b master
-cd Calculator_WebApp
+cd CalculatorYL2
 ```
 
 2. Соберите проект:
